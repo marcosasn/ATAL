@@ -1,6 +1,6 @@
 <snippet>
-  <content><![CDATA[
-# ${1:Project Name}
+
+## Project Name
 
 ATAL - Analysis Algorithms and Techniques
 
@@ -16,6 +16,4 @@ Examples codes, activities done in ATAL course at the Federal University of Camp
 
 Slides, activities and exercises by teacher Gustavo.
 
-]]></content>
-  <tabTrigger>readme</tabTrigger>
 </snippet>
