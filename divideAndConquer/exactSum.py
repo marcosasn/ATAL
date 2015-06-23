@@ -1,14 +1,14 @@
-def exactSum(P,m, i, j):
-    if (i==j):
-        return P[j]
+def exactSum(P,m, i, j,S):
+    if sum(S) == m:
+        return S
     else:
         mid = (i+j)/2
-        p1 = exactSum(P, m, i, mid)
-        p2 = exactSum(P, m, mid+1, j)
-        if (p1 <= p2 and p1+p2 == m and abs(p1-p2 <= 2)):
-                return (p1,p2)
-        return p2
-        
+        S.append(P[mid])
+        if P[mid] < m:
+            return exactSum(P,m,i,mid,S)
+        else:
+            return exactSum(P,m,mid+1,j,S)
+
 def exactSum2(P,m,i,j):
     for k in range(len(P)):
         for l in range(len(P)):
@@ -16,16 +16,16 @@ def exactSum2(P,m,i,j):
                 return (P[k],P[l])
     return (0,0)
 
-
 #n = int(raw_input())
-n = 5
-#n=2
+#n = 5
+n=2
 #P = map(int,raw_input().split())
-P = [10,2,6,8,4]
-#P = [40,40]
+#P = [10,2,6,8,4]
+P = [40,40]
 #m = int(raw_input())
-m = 10
-#m = 80
-result = exactSum(sorted(P),m,0,len(P)-1)
+#m = 10
+m = 80
+result = exactSum(sorted(P),m,0,len(P)-1,[])
+result = sorted(result)
 
 print "Peter should buy books whose prices are "+str(result[0])+" and "+str(result[1])+"."
