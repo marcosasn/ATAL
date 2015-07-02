@@ -3,8 +3,8 @@ def exactSum(P,m, i, j,S):
         return S
     else:
         mid = (i+j)/2
-        S.append(P[mid])
         if P[mid] < m:
+            S.append(P[mid])
             return exactSum(P,m,i,mid,S)
         else:
             return exactSum(P,m,mid+1,j,S)
@@ -18,13 +18,13 @@ def exactSum2(P,m,i,j):
 
 #n = int(raw_input())
 #n = 5
-n=2
+#n=2
 #P = map(int,raw_input().split())
-#P = [10,2,6,8,4]
-P = [40,40]
+P = [10,2,6,8,4]
+#P = [40,40]
 #m = int(raw_input())
-#m = 10
-m = 80
+m = 10
+#m = 80
 result = exactSum(sorted(P),m,0,len(P)-1,[])
 result = sorted(result)
 
